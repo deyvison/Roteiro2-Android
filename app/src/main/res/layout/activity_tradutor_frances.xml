@@ -14,8 +14,18 @@
         android:layout_height="wrap_content"
         android:text="Resposta Francês.."
         android:id="@+id/repostaFrancesView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:textSize="30dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="162dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/botaoVoltarFrances"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="79dp" />
 </RelativeLayout>
