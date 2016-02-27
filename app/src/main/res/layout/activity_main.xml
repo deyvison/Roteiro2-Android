@@ -9,4 +9,61 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.deyvison.roteiro02.MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tradutor de Cores"
+        android:id="@+id/tradutorView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:clickable="false"
+        android:textSize="30dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Escolha uma das cores abaixo para traduzir."
+        android:id="@+id/instrucaoView"
+        android:layout_below="@+id/tradutorView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:gravity="center"
+        android:textSize="20dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Azul"
+        android:id="@+id/botaoAzul"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:textSize="20dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Amarelo"
+        android:id="@+id/botaoAmarelo"
+        android:layout_below="@+id/botaoAzul"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#FFFF33"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vermelho"
+        android:id="@+id/botaoVermelho"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/botaoAmarelo"
+        android:layout_alignParentStart="true"
+        android:textColor="#FF0000"
+        android:textSize="20dp"
+        android:gravity="center"/>
 </RelativeLayout>
