@@ -24,6 +24,7 @@
             <intent-filter>
                 <action android:name="TRADUZIR" />
                 <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="INGLES"/>
 
             </intent-filter>
         </activity>
@@ -33,6 +34,7 @@
             <intent-filter>
                 <action android:name="TRADUZIR" />
                 <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="FRANCES"/>
 
             </intent-filter>
 

@@ -9,13 +9,28 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+   // private EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((Button)findViewById(R.id.botaoTraduzir)).setOnClickListener(new Traduzir("TRADUZIR",null));
+       // this.editText = ((EditText) findViewById(R.id.corEntrada));
+        ((Button)findViewById(R.id.botaoTraduzir)).setOnClickListener(new Traduzir("TRADUZIR", null));
+        ((Button)findViewById(R.id.botaoIngles)).setOnClickListener(new Traduzir("TRADUZIR", "INGLES"));
+        ((Button)findViewById(R.id.botaoFrances)).setOnClickListener(new Traduzir("TRADUZIR", "FRANCES"));
+    }
 
+    private boolean validarEntrada(EditText editText){
+        String valor = editText.getText().toString();
+        return !(!valor.equalsIgnoreCase("Azul") && !valor.equalsIgnoreCase("Vermelho") && !valor.equalsIgnoreCase("Amarelo"));
+    }
+
+    private void erro(EditText editText){
+        View focus = null;
+        editText.setError("Entrada inválida!");
+        focus = editText;
+        focus.requestFocus();
     }
 
     private class Traduzir implements View.OnClickListener{
@@ -29,14 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+
             EditText editText = ((EditText)findViewById(R.id.corEntrada));
             String valor = editText.getText().toString();
-            if(!valor.equalsIgnoreCase("Azul") && !valor.equalsIgnoreCase("Vermelho") && !valor.equalsIgnoreCase("Amarelo")){
-                View focus = null;
-                editText.setError("Entrada inválida!");
-                focus = editText;
-                focus.requestFocus();
-            }else{
+
+            if(validarEntrada(editText)){
                 Intent i = new Intent(this.action);
                 if(this.category != null)
                     i.addCategory(this.category);
@@ -44,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 b.putString("cor", valor);
                 i.putExtras(b);
                 startActivity(i);
+            }else{
+                erro(editText);
             }
         }
     }
